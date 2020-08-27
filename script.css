@@ -22,6 +22,14 @@
             font-family: arial;
             font-size: 60px;
           }
+          .centered2 {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: arial;
+            font-size: 20px;
+          }
 
 
         /* Header */
