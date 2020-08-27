@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>About Me</title>
+<title>Home</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -20,33 +20,48 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <a href="2018.html">2018</a>
         <a href="2019.html">2019</a>
         <a href="2020.html">2020</a>
-        <a href="aboutme.html">About Me</a>
+        <a href="aboutme.html">CV</a>
     </div>
 
   <!-- The Grid -->
-  <div class="w3-row-padding">
-
-    <div class="w3-row" id="myGrid" style="margin-bottom:128px">
-      <div class="w3-third">
-        <a href="2019.html"><img src="images/sprout2.jpg" style="width:100%"></a>
-        <a href="2017.html"><img src="images/2017/explosionimage.jpg" style="width:100%"></a>
-        <a href="2019.html"><img src="images/animation1.jpg" style="width:100%"></a>
-
-      </div>
-
-      <div class="w3-third">
-        <a href="2019.html"><img src="images/light.jpg" style="width:100%"></a>
-        <a href="2020.html"><img src="images/speakerform.jpg" style="width:100%"></a>
-        <a href="2018.html"><img src="images/sails 3.jpg" style="width: 100%;"></a>
+    <div class="slideshow">
+      
+      <div class="container">
+        <div class="centered">Lucy Carter</div>
+        <img class="mySlides" src="images/homescreen/slide1.png" style="width:100%">
+      
         
+        <div class="centered">Lucy Carter</div>
+        <img class="mySlides" src="images/homescreen/slide2.png" style="width:100%">
+      
 
+      
+        <div class="centered">Lucy Carter</div>
+        <img class="mySlides" src="images/homescreen/slide3.png" style="width:100%">
+     
+
+      
+        <div class="centered">Lucy Carter</div>
+        <img class="mySlides" src="images/homescreen/slide4.png" style="width:100%">
       </div>
 
-      <div class="w3-third">
-        <a href="2017.html"><img src="images/2017/doublepagespread2_big.jpg" style="width:100%"></a>
-        <a href="2017.html"><img src="images/2017/movingimage4.gif" style="width:100%"></a>
-        <a href="2017.html"><img src="images/2017/1headwebsite_big.jpg" style="width:100%"></a>
-      </div>
+
+      <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+               x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            x[myIndex-1].style.display = "block";  
+            setTimeout(carousel, 3000); // Change image every 3 seconds
+        }
+        </script>
 
   <!-- End Grid -->
   </div>
