@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, DM_Sans } from 'next/font/google'
+import { Playfair_Display, Lora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const spaceGrotesk = Space_Grotesk({ 
+const playfair = Playfair_Display({ 
+  subsets: ["latin"],
+  variable: '--font-heading'
+});
+const lora = Lora({ 
   subsets: ["latin"],
   variable: '--font-sans'
-});
-const dmSans = DM_Sans({ 
-  subsets: ["latin"],
-  variable: '--font-body'
 });
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${dmSans.variable} font-sans antialiased`}>
+      <body className={`${playfair.variable} ${lora.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
