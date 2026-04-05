@@ -125,9 +125,5 @@
   }
   body {
     @apply bg-background text-foreground;
-    cursor: none;
-  }
-  a, button {
-    cursor: none;
   }
 }
