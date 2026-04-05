@@ -37,8 +37,7 @@ export function Header() {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
-          Lucy Carter
-          <span className="text-muted-foreground">.</span>
+          Lucy C<span className="opacity-50">reative</span>
         </motion.a>
 
         <nav className="hidden items-center gap-8 md:flex">
