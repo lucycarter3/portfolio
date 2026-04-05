@@ -61,9 +61,10 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
             
             <motion.div
               className="flex h-12 w-12 items-center justify-center rounded-full border border-border"
+              initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
               animate={{ 
                 scale: isHovered ? 1.2 : 1,
-                backgroundColor: isHovered ? "var(--primary)" : "transparent"
+                backgroundColor: isHovered ? "#f5f5f5" : "rgba(0, 0, 0, 0)"
               }}
               transition={{ duration: 0.3 }}
             >
