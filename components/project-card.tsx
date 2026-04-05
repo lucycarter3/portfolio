@@ -58,15 +58,13 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
               <p>{year}</p>
             </div>
             
-            <motion.div
-              className={`flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors duration-300 ${isHovered ? "bg-foreground" : "bg-transparent"}`}
-              animate={{ scale: isHovered ? 1.2 : 1 }}
-              transition={{ duration: 0.3 }}
+            <div
+              className={`flex h-12 w-12 items-center justify-center rounded-full border border-border transition-all duration-300 ${isHovered ? "scale-120 bg-foreground" : "scale-100"}`}
             >
               <ArrowUpRight 
                 className={`h-5 w-5 transition-colors duration-300 ${isHovered ? "text-background" : "text-foreground"}`} 
               />
-            </motion.div>
+            </div>
           </div>
         </div>
         
