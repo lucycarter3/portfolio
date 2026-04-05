@@ -25,7 +25,6 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
       className="group relative border-t border-border py-8 md:py-12"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      data-cursor="pointer"
     >
       <a href="#" className="block">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
