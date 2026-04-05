@@ -4,10 +4,7 @@ import { motion } from "motion/react"
 import { ArrowUpRight } from "lucide-react"
 
 const socials = [
-  { label: "LinkedIn", href: "#" },
-  { label: "Dribbble", href: "#" },
-  { label: "Behance", href: "#" },
-  { label: "Twitter", href: "#" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/lucy-carter-0b3a86185/?skipRedirect=true" },
 ]
 
 export function ContactSection() {
