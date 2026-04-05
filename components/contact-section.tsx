@@ -39,7 +39,7 @@ export function ContactSection() {
           className="mt-12 flex justify-center"
         >
           <motion.a
-            href="mailto:hello@youremail.com"
+            href="mailto:hello@lucycarter.com"
             className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-primary px-10 py-5 text-lg font-medium text-primary-foreground"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -71,7 +71,7 @@ export function ContactSection() {
 
           <div className="text-center md:text-right">
             <p className="text-sm text-muted-foreground">
-              hello@youremail.com
+              hello@lucycarter.com
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Available for work

@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Designer Portfolio | Creative Work',
-  description: 'Graphic and web designer crafting digital experiences',
+  title: 'Lucy Carter | Graphic & Web Designer',
+  description: 'Lucy Carter - Graphic and web designer crafting digital experiences',
   generator: 'v0.app',
   icons: {
     icon: [

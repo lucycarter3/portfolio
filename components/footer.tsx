@@ -14,7 +14,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="text-sm text-muted-foreground"
         >
-          © {currentYear} Your Name. All rights reserved.
+          © {currentYear} Lucy Carter. All rights reserved.
         </motion.p>
 
         <motion.p
