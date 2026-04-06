@@ -70,9 +70,6 @@ export function ContactSection() {
             <p className="text-sm text-muted-foreground">
               hello@lucycarter.com
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Available for work
-            </p>
           </div>
         </motion.div>
       </div>

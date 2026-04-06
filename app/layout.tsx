@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Lora } from 'next/font/google'
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const playfair = Playfair_Display({ 
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: '--font-heading'
 });
-const lora = Lora({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: '--font-sans'
 });
@@ -42,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${lora.variable} font-sans antialiased`}>
+      <body className={`${jakarta.variable} ${inter.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
