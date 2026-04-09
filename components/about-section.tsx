@@ -143,7 +143,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12"
+              className="mt-12 hidden"
             >
               <a
                 href="/resume.pdf"
