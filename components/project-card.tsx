@@ -79,13 +79,8 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="relative h-48 w-72 overflow-hidden rounded-lg bg-secondary">
-            <img
-              src={image}
-              alt={title}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+          <div className="relative h-48 w-72 overflow-hidden rounded-lg" style={{ background: "linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)" }}>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
               <span className="text-sm font-medium tracking-wide text-white uppercase">Coming soon</span>
             </div>
           </div>
