@@ -72,19 +72,22 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
         <motion.div
           className="pointer-events-none absolute right-12 top-1/2 z-10 hidden -translate-y-1/2 overflow-hidden rounded-lg lg:block"
           initial={{ opacity: 0, scale: 0.8, y: "-50%" }}
-          animate={{ 
-            opacity: isHovered ? 1 : 0, 
+          animate={{
+            opacity: isHovered ? 1 : 0,
             scale: isHovered ? 1 : 0.8,
             y: "-50%"
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="h-48 w-72 overflow-hidden rounded-lg bg-secondary">
-            <img 
-              src={image} 
+          <div className="relative h-48 w-72 overflow-hidden rounded-lg bg-secondary">
+            <img
+              src={image}
               alt={title}
               className="h-full w-full object-cover"
             />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/60">
+              <span className="text-sm font-medium tracking-wide text-white uppercase">Coming soon</span>
+            </div>
           </div>
         </motion.div>
       </a>

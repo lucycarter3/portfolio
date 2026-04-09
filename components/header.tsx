@@ -61,12 +61,14 @@ export function Header() {
         </nav>
 
         <motion.a
-          href="mailto:hello@lucycarter.com"
+          href="https://www.linkedin.com/in/lucy-carter-0b3a86185/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full border border-border px-5 py-2 text-sm font-medium transition-colors hover:bg-secondary"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Get in touch
+          LinkedIn
         </motion.a>
       </div>
     </motion.header>

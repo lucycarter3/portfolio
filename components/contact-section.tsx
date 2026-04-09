@@ -36,7 +36,9 @@ export function ContactSection() {
           className="mt-12 flex justify-center"
         >
           <motion.a
-            href="mailto:hello@lucycarter.com"
+            href="https://www.linkedin.com/in/lucy-carter-0b3a86185/"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-primary px-10 py-5 text-lg font-medium text-primary-foreground"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -46,32 +48,6 @@ export function ContactSection() {
           </motion.a>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-24 flex flex-col items-center justify-between gap-8 border-t border-border pt-12 md:flex-row"
-        >
-          <div className="flex items-center gap-8">
-            {socials.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                whileHover={{ y: -2 }}
-              >
-                {social.label}
-              </motion.a>
-            ))}
-          </div>
-
-          <div className="text-center md:text-right">
-            <p className="text-sm text-muted-foreground">
-              hello@lucycarter.com
-            </p>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
