@@ -55,10 +55,10 @@ export function AboutSection() {
               </h2>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 0.5, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
-                className="absolute -right-4 -top-4"
+                className="absolute -right-4 -top-4 -z-10"
               >
                 <div
                   className="h-[138px] w-[120px] overflow-hidden"

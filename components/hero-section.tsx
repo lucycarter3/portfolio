@@ -26,9 +26,9 @@ export function HeroSection() {
           >
             Crafting digital
             <br />
-            <span className="text-muted-foreground">experiences</span> that
+            <span style={{ color: "#0096FA" }}>experiences</span> that
             <br />
-            resonate<span className="text-accent">.</span>
+            resonate<span style={{ color: "#0096FA" }}>.</span>
           </motion.h1>
         </div>
 
