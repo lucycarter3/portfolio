@@ -3,35 +3,39 @@
 import { motion } from "motion/react"
 
 const skills = [
-  "UI/UX Design",
-  "Brand Identity",
-  "Web Development",
-  "Motion Design",
-  "Prototyping",
+  "Marketing Design",
+  "Branding",
+  "Web Design",
   "Design Systems",
+  "Artworking",
 ]
 
 const experience = [
   {
-    company: "Freelance",
-    role: "Independent Designer",
-    period: "2022 — Present",
+    company: "IG",
+    role: "Designer",
+    period: "2025 — Present",
   },
   {
-    company: "Studio Creative",
-    role: "Senior Designer",
-    period: "2020 — 2022",
+    company: "Wagestream",
+    role: "Digital Content Designer",
+    period: "2024 — 2025",
   },
   {
-    company: "Digital Agency",
-    role: "UI/UX Designer",
-    period: "2018 — 2020",
+    company: "Fresha",
+    role: "Junior Brand & Marketing Designer",
+    period: "2023",
+  },
+  {
+    company: "Comply Pro",
+    role: "Performance Designer\nDigital Designer",
+    period: "2021 — 2023",
   },
 ]
 
 export function AboutSection() {
   return (
-    <section id="about" className="bg-secondary/30 px-6 py-24 md:px-12">
+    <section id="about" className="relative bg-secondary/30 px-6 py-24 md:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <motion.div
@@ -43,12 +47,34 @@ export function AboutSection() {
             <span className="text-sm font-medium text-muted-foreground">
               About
             </span>
-            <h2 className="mt-2 text-3xl font-medium tracking-tight md:text-4xl">
-              A designer with a passion for
-              <br />
-              <span className="text-muted-foreground">meaningful work</span>
-              <span className="text-accent">.</span>
-            </h2>
+            <div className="relative mt-2">
+              <h2 className="text-3xl font-medium tracking-tight md:text-4xl">
+                A designer with a passion for
+                <br />
+                <span className="text-muted-foreground">meaningful work</span>
+                <span className="text-accent">.</span>
+              </h2>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+                className="absolute -right-4 -top-4 -z-10"
+              >
+                <div
+                  className="h-[138px] w-[120px] overflow-hidden"
+                  style={{
+                    borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
+                  }}
+                >
+                  <img
+                    src="/lucy-headshot.jpg"
+                    alt="Lucy Carter"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
 
             <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
               {
@@ -58,7 +84,7 @@ export function AboutSection() {
 
             <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
               {
-                "When I'm not designing, you'll find me exploring new design tools, contributing to open-source projects, or mentoring aspiring designers."
+                "I'm a London-based Digital Content Designer and invite you to explore my portfolio shaped by years of work, recently within the Software as a Service (SaaS) and Fintech landscapes."
               }
             </p>
 
@@ -104,7 +130,7 @@ export function AboutSection() {
                 >
                   <div>
                     <h4 className="text-lg font-medium">{exp.company}</h4>
-                    <p className="text-muted-foreground">{exp.role}</p>
+                    <p className="whitespace-pre-line text-muted-foreground">{exp.role}</p>
                   </div>
                   <span className="text-sm text-muted-foreground">
                     {exp.period}
@@ -118,7 +144,7 @@ export function AboutSection() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-12"
+              className="mt-12 hidden"
             >
               <a
                 href="/resume.pdf"
