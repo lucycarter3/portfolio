@@ -24,7 +24,8 @@ const projects = [
     description: "",
     role: "",
     year: "2025",
-    image: "/Missingmetric_tile",
+    image: "/wagestream_whitepapermockup.webp",
+    href: "/work/missing-metric",
   },
   {
     title: "Wagestream",
