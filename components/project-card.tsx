@@ -10,9 +10,10 @@ interface ProjectCardProps {
   year: string
   image: string
   index: number
+  href?: string
 }
 
-export function ProjectCard({ title, description, role, year, image, index }: ProjectCardProps) {
+export function ProjectCard({ title, description, role, year, image, index, href }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -25,7 +26,7 @@ export function ProjectCard({ title, description, role, year, image, index }: Pr
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <a href="#" className="block">
+      <a href={href ?? "#"} className="block">
         {/* Hero image */}
         <motion.div
           className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl"
