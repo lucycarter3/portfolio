@@ -38,8 +38,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
         >
-          I design and build interfaces that connect brands with their audiences. 
-          Currently available for freelance projects and full-time opportunities.
+          I design and build interfaces that connect brands with their audiences.
         </motion.p>
 
         <motion.div
@@ -55,13 +54,6 @@ export function HeroSection() {
             whileTap={{ scale: 0.95 }}
           >
             View Work
-          </motion.a>
-          <motion.a
-            href="#about"
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            whileHover={{ x: 5 }}
-          >
-            Learn more &rarr;
           </motion.a>
         </motion.div>
 
