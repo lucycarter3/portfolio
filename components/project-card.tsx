@@ -41,9 +41,11 @@ export function ProjectCard({ title, description, role, year, image, index, href
               className="absolute inset-0 h-full w-full object-cover"
             />
           )}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-            <span className="text-sm font-medium tracking-wide text-white/80 uppercase">Coming soon</span>
-          </div>
+          {!href && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              <span className="text-sm font-medium tracking-wide text-white/80 uppercase">Coming soon</span>
+            </div>
+          )}
         </motion.div>
 
         {/* Project info below image */}

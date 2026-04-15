@@ -47,13 +47,15 @@ const projects = [
     role: "",
     year: "2021 / 2023",
     image: "/siteapppro_tile.png",
+    href: "/work/site-app-pro",
   },
   {
     title: "Safe Food Pro",
     description: "",
     role: "",
     year: "2021 / 2023",
-    image: "/safefoodpro_tile",
+    image: "/safefoodpro_tile.jpg",
+    href: "/work/safe-food-pro",
   },
   {
     title: "Sprout",
@@ -61,6 +63,7 @@ const projects = [
     role: "",
     year: "2020",
     image: "/sprout3.jpg",
+    href: "/work/sprout",
   },
 ]
 
@@ -68,7 +71,7 @@ export function WorkSection() {
   const scrollRef = useRef<HTMLDivElement>(null)
 
   return (
-    <section id="work" className="py-24">
+    <section id="work" className="pt-24 pb-[5.4rem]">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

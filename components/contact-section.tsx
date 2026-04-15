@@ -9,7 +9,7 @@ const socials = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="px-6 py-24 md:px-12">
+    <section id="contact" className="px-6 pb-24 pt-[5.4rem] md:px-12">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -24,7 +24,7 @@ export function ContactSection() {
           <h2 className="mx-auto mt-4 max-w-3xl text-balance text-4xl font-medium tracking-tight md:text-6xl lg:text-7xl">
             Have a project in mind? {"Let's"} create something{" "}
             <span className="text-muted-foreground">amazing together</span>
-            <span className="text-accent">.</span>
+            <span style={{ color: "#0096FA" }}>.</span>
           </h2>
         </motion.div>
 

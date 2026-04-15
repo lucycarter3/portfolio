@@ -52,28 +52,8 @@ export function AboutSection() {
                 A designer with a passion for
                 <br />
                 <span className="text-muted-foreground">meaningful work</span>
-                <span className="text-accent">.</span>
+                <span style={{ color: "#0096FA" }}>.</span>
               </h2>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.2 }}
-                className="absolute -right-4 -top-4 -z-10"
-              >
-                <div
-                  className="h-[138px] w-[120px] overflow-hidden"
-                  style={{
-                    borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%",
-                  }}
-                >
-                  <img
-                    src="/lucy-headshot.jpg"
-                    alt="Lucy Carter"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </motion.div>
             </div>
 
             <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
