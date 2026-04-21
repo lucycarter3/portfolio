@@ -5,16 +5,19 @@ import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 
 const navItems = [
-  { label: "Work", href: "/#work" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Contact", href: "/contact" },
 ]
 
 export function Header() {
   const pathname = usePathname()
-  const [activeSection, setActiveSection] = useState(() =>
-    pathname === "/about" ? "about" : "work"
-  )
+  const [activeSection, setActiveSection] = useState(() => {
+    if (pathname === "/about") return "about"
+    if (pathname === "/contact") return "contact"
+    if (pathname === "/work" || pathname.startsWith("/work/")) return "work"
+    return ""
+  })
   const [isScrolled, setIsScrolled] = useState(false)
   const [isInDarkSection, setIsInDarkSection] = useState(() => pathname === "/")
   const [menuOpen, setMenuOpen] = useState(false)

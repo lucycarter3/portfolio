@@ -101,13 +101,13 @@ export default function SproutPage() {
             className="mt-16 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
-              Sprout is a toothbrush holder designed to water plants using the leftover waste water that would otherwise be unused.
+              Sprout is a toothbrush holder designed to eliminate bathroom waste — repurposing the grey water that would otherwise go unused to irrigate an integrated planter.
             </p>
             <p>
-              This design consists of three main components; a 3D printed lining, a divider that can be removed from the CNC structure for cleaning, and a 3D printed base. The base doesn't detach from the CNC component; instead, a central peak pushes the grey water on either side to water the plants.
+              The design is composed of three considered components: a 3D printed lining, a removable divider for ease of cleaning, and a 3D printed base. Rather than detaching from the CNC-machined structure, the base features a central peak that naturally channels grey water to either side, directing it toward the plants above.
             </p>
             <p>
-              Sprout's packaging was created using a laser cutter to produce an etched pattern on the logo.
+              The packaging echoes the craft of the product itself — produced using a laser cutter to etch a delicate pattern across the logo, adding a tactile, considered finish to the unboxing experience.
             </p>
           </motion.div>
 

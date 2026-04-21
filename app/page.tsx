@@ -1,9 +1,6 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { WorkSection } from "@/components/work-section"
 import { ParallaxSection } from "@/components/parallax-section"
-
-import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -36,8 +33,6 @@ export default function Home() {
             <div className="absolute left-[-5%] top-[90%] h-[350px] w-[350px] rounded-full bg-cyan-200/25 blur-[110px]" />
           </div>
           <HeroSection />
-          <WorkSection />
-          <ContactSection />
           <Footer />
         </div>
       </main>

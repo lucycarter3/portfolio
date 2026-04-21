@@ -33,13 +33,15 @@ const projects = [
     role: "",
     year: "2024 / 2025",
     image: "/wagestream.jpg",
+    href: "/work/wagestream",
   },
   {
     title: "Fresha",
     description: "",
     role: "",
     year: "2023",
-    image: "/fresha.png",
+    image: "/Fresha_tile.png",
+    href: "/work/fresha",
   },
   {
     title: "Site App Pro",

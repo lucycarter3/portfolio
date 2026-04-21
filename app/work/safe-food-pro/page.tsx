@@ -101,16 +101,13 @@ export default function SafeFoodProPage() {
             className="mt-16 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
-              Safe Food Pro is a food safety app allowing users to simply manage their food safety program.
+              Safe Food Pro is a food safety platform empowering businesses to manage their compliance programmes with simplicity and confidence.
             </p>
             <p>
-              This website redesign project's aim was a content overhaul and brand update. As part of the website redesign, I focused on increasing conversion rates through increasing the number, placement and style of call to action buttons.
+              This project centred on a comprehensive website redesign — encompassing both a content overhaul and a refined brand update. A key focus was placed on optimising conversion through increasing the number, strategic placement, and styling of calls to action throughout the site.
             </p>
             <p>
-              I created new content around 'who is it for' and 'what do you need' for prospects who are looking at how it would help their business size specifically or to help solve a specific problem.
-            </p>
-            <p>
-              And finally I added search capability functions to allow prospects to find resources and product features easier.
+              New content frameworks were developed around two core prospect questions — who is it for and what do you need — enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
             </p>
           </motion.div>
 
