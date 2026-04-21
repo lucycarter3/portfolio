@@ -39,7 +39,8 @@ const projects = [
     description: "",
     role: "",
     year: "2023",
-    image: "/fresha.png",
+    image: "/Fresha_tile.png",
+    href: "/work/fresha",
   },
   {
     title: "Site App Pro",

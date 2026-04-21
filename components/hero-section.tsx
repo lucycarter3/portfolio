@@ -48,7 +48,7 @@ export function HeroSection() {
           className="mt-12 flex items-center gap-6"
         >
           <motion.a
-            href="#work"
+            href="/work"
             className="rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
