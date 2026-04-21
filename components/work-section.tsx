@@ -33,6 +33,7 @@ const projects = [
     role: "",
     year: "2024 / 2025",
     image: "/wagestream.jpg",
+    href: "/work/wagestream",
   },
   {
     title: "Fresha",
