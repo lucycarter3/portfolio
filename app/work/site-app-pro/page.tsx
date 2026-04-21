@@ -67,37 +67,60 @@ export default function SiteAppProPage() {
             {/* Body copy — takes up 2 cols */}
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground md:col-span-2">
               <p>
-                As part of the website redesign, I focused on increasing conversion rates through the placement and style of call to action buttons.
-              </p>
-              <p>
-                I created new content around 'who is it for' and 'what do you need' for prospects who are looking at how it could help their business size specifically or to help solve a specific problem.
-              </p>
-              <p>
-                And finally I added search capability functions to allow prospects to find resources and product features easier.
+                As part of a wider website redesign, a key focus was placed on optimising conversion through the strategic placement and styling of calls to action. New content frameworks were developed around two core prospect questions — who is it for and what do you need — enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
               </p>
             </div>
 
             {/* Colour palette */}
             <div className="flex flex-col gap-3">
               {[
-                { label: "Primary",   rgb: "249, 116, 2",   hex: "#F97402", dark: false },
-                { label: "Secondary", rgb: "30, 43, 93",    hex: "#1E2B5D", dark: false },
-                { label: "Secondary", rgb: "114, 212, 225", hex: "#72D4E1", dark: true  },
+                { label: "Primary",   rgb: "249, 116, 2",   hex: "#F97402", dark: false, primary: true  },
+                { label: "Secondary", rgb: "30, 43, 93",    hex: "#1E2B5D", dark: false, primary: false },
+                { label: "Secondary", rgb: "114, 212, 225", hex: "#72D4E1", dark: true,  primary: false },
               ].map((colour) => (
                 <div
                   key={colour.hex}
-                  className="relative flex h-28 flex-col justify-end rounded-xl p-4"
+                  className={`relative flex flex-col justify-end rounded-xl p-4 ${colour.primary ? "h-36" : "h-28"}`}
                   style={{ backgroundColor: colour.hex }}
                 >
-                  <p className={`text-sm font-semibold ${colour.dark ? "text-black" : "text-white"}`}>
+                  <p className={`text-xs font-semibold ${colour.dark ? "text-black" : "text-white"}`}>
                     {colour.label}
                   </p>
-                  <p className={`font-mono text-xs ${colour.dark ? "text-black/60" : "text-white/60"}`}>
+                  <p className={`text-xs ${colour.dark ? "text-black/60" : "text-white/60"}`}>
                     {colour.hex}
                   </p>
-                  <p className={`font-mono text-xs ${colour.dark ? "text-black/60" : "text-white/60"}`}>
+                  <p className={`text-xs ${colour.dark ? "text-black/60" : "text-white/60"}`}>
                     RGB {colour.rgb}
                   </p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Website image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-16 overflow-hidden rounded-2xl"
+          >
+            <img src="/SAP-website.webp" alt="Site App Pro website" className="w-full object-cover" />
+          </motion.div>
+
+          {/* Social posts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="mt-16"
+          >
+            <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+              Social Post<span style={{ color: "#0096FA" }}>.</span>
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+              {[1, 2, 3].map((n) => (
+                <div key={n} className="overflow-hidden rounded-2xl">
+                  <img src={`/SAP-socialpost-${n}.webp`} alt={`Site App Pro social post ${n}`} className="w-full object-cover" />
                 </div>
               ))}
             </div>

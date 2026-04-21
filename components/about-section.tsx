@@ -57,15 +57,7 @@ export function AboutSection() {
             </div>
 
             <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
-              {
-                "I'm a graphic and web designer with over 6 years of experience creating digital experiences that matter. I believe design should be purposeful, accessible, and delightful."
-              }
-            </p>
-
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-              {
-                "I'm a London-based Digital Content Designer and invite you to explore my portfolio shaped by years of work, recently within the Software as a Service (SaaS) and Fintech landscapes."
-              }
+              Hi, I'm Lucy — a New Zealand-born, London-based Digital Content Designer with over six years of experience crafting purposeful, accessible, and considered digital experiences. Shaped by a breadth of work across the Software as a Service and Fintech landscapes, my practice sits at the intersection of design craft and strategic thinking — creating work that is as functional as it is visually refined.
             </p>
 
             <div className="mt-12">

@@ -1,10 +1,24 @@
 "use client"
 
-import { motion } from "motion/react"
+import { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "motion/react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
+const appStoreImages = [1,2,3,4,5,6,7,8,9,10].map((n) => ({
+  src: `/Fresha-appstore-${n}.webp`,
+  alt: `App Store screenshot ${n}`,
+}))
+
 export default function FreshaPage() {
+  const [current, setCurrent] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % appStoreImages.length)
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
   return (
     <div className="relative">
       {/* Background gradient blobs */}
@@ -60,7 +74,7 @@ export default function FreshaPage() {
               <div className="overflow-hidden rounded-2xl">
                 <img src="/Fresha-stickers.webp" alt="Fresha window stickers" className="w-full object-cover" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 max-w-lg">
                 <div className="overflow-hidden rounded-2xl">
                   <img src="/Fresha-certificate .webp" alt="Fresha certificate" className="w-full object-cover" />
                 </div>
@@ -76,20 +90,48 @@ export default function FreshaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-20"
+            className="mt-20 flex flex-col gap-8 md:flex-row md:items-start md:gap-12"
           >
-            <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-              App Store Screenshots<span style={{ color: "#0096FA" }}>.</span>
-            </h2>
-            <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              Updated App Store screenshots for our B2B app.
-            </p>
-            <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-5">
-              {[1,2,3,4,5,6,7,8,9,10].map((n) => (
-                <div key={n} className="overflow-hidden rounded-2xl">
-                  <img src={`/Fresha-appstore-${n}.webp`} alt={`App Store screenshot ${n}`} className="w-full object-cover" />
-                </div>
-              ))}
+            {/* Text */}
+            <div className="md:flex-1">
+              <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
+                App Store Screenshots<span style={{ color: "#0096FA" }}>.</span>
+              </h2>
+              <div className="mt-4 space-y-4 text-lg leading-relaxed text-muted-foreground">
+                <p>Brand awareness and product marketing project delivering updated App Store screenshots for the Fresha B2B platform — the world's leading online marketplace and booking solution for beauty, hair, and wellness professionals.</p>
+                <p>With over 450,000 businesses across 120+ countries trusting Fresha to run their operations, the updated screenshots were crafted to communicate the platform's breadth and capability at a glance. Each screen was designed to highlight the tools that matter most to modern salon and wellness owners — from appointment scheduling and point-of-sale to staff management and targeted marketing.</p>
+                <p>This refresh introduced a suite of new feature callouts, including an upgraded scheduling view, revitalised visual design, and the integration of verified Capterra reviews — lending third-party credibility to reinforce Fresha's position as the industry's most trusted platform.</p>
+              </div>
+            </div>
+
+            {/* Carousel */}
+            <div className="relative overflow-hidden rounded-2xl bg-muted w-full md:w-72 shrink-0">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={current}
+                  src={appStoreImages[current].src}
+                  alt={appStoreImages[current].alt}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6 }}
+                  className="w-full object-cover"
+                />
+              </AnimatePresence>
+
+              {/* Dot indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                {appStoreImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      i === current ? "w-6 bg-white" : "w-1.5 bg-white/50"
+                    }`}
+                    aria-label={`Go to screenshot ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -122,8 +164,8 @@ export default function FreshaPage() {
             <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
               Newspaper Insert<span style={{ color: "#0096FA" }}>.</span>
             </h2>
-            <div className="mt-8 overflow-hidden rounded-2xl">
-              <img src="/Fresha-guardianincert.webp" alt="Fresha Guardian newspaper insert" className="w-full object-cover" />
+            <div className="mt-8 overflow-hidden rounded-2xl max-w-lg">
+              <img src="/Fresha-guardianincert.webp" alt="Fresha Guardian newspaper insert" className="w-full object-contain" />
             </div>
           </motion.div>
 
@@ -138,7 +180,7 @@ export default function FreshaPage() {
               Christmas Holiday Cards<span style={{ color: "#0096FA" }}>.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              We created a Christmas mini-brand identity using our brand colours and pushing our brand shapes to develop an illustration style.
+              A seasonal extension of the Fresha brand identity, developed by pushing existing brand shapes and colour palette to craft a bespoke illustration style — bringing warmth and festivity to the platform while maintaining visual cohesion with the wider brand.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
               {[1,2,3,4].map((n) => (
