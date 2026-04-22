@@ -8,13 +8,13 @@ import { motion, useMotionValue, useSpring, useTransform, useScroll, MotionValue
 // mouseDepth: how strongly the card reacts to mouse movement — higher = more
 // rot: static tilt angle (no mouse-driven rotation)
 const CARDS = [
-  { id: 1, baseX: -375, baseY: -170, scrollSpeed: 160, mouseDepth: 0.35, rot: -5,  w: 185, h: 135, img: "/homepage-header-bts.png" },
-  { id: 2, baseX:  320, baseY:  240, scrollSpeed: 310, mouseDepth: 0.85, rot:  3,  w: 155, h: 118, img: "/homepage-header-fresha.png" },
-  { id: 3, baseX:   10, baseY: -270, scrollSpeed: 240, mouseDepth: 1.25, rot: -4,  w: 200, h: 145, img: "/homepage-header-wagestream.png" },
-  { id: 4, baseX:  390, baseY:   50, scrollSpeed: 120, mouseDepth: 0.55, rot:  6,  w: 215, h: 158, img: "/homepage-header-bull.png" },
-  { id: 5, baseX: -410, baseY:   75, scrollSpeed: 360, mouseDepth: 1.1,  rot:  4,  w: 168, h: 122, img: "/homepage-header-ig.png" },
-  { id: 6, baseX: -210, baseY:  -30, scrollSpeed: 195, mouseDepth: 0.7,  rot: -3,  w: 172, h: 130, img: "/homepage-header-themissingmetric.png" },
-  { id: 7, baseX:  310, baseY: -200, scrollSpeed: 390, mouseDepth: 1.45, rot:  8,  w: 150, h: 112, img: "/homepage-header-sprout.png" },
+  { id: 1, baseX: -375, baseY: -170, scrollSpeed: 160, mouseDepth: 0.35, rot: -5,  w: 185, h: 135, img: "/homepage-header-bts.png",              href: "/work/beat-the-street" },
+  { id: 2, baseX:  320, baseY:  240, scrollSpeed: 310, mouseDepth: 0.85, rot:  3,  w: 155, h: 118, img: "/homepage-header-fresha.png",            href: "/work/fresha" },
+  { id: 3, baseX:   10, baseY: -270, scrollSpeed: 240, mouseDepth: 1.25, rot: -4,  w: 200, h: 145, img: "/homepage-header-wagestream.png",        href: "/work/wagestream" },
+  { id: 4, baseX:  390, baseY:   50, scrollSpeed: 120, mouseDepth: 0.55, rot:  6,  w: 215, h: 158, img: "/homepage-header-bull.png",              href: "/work/beat-the-street" },
+  { id: 5, baseX: -410, baseY:   75, scrollSpeed: 360, mouseDepth: 1.1,  rot:  4,  w: 168, h: 122, img: "/homepage-header-ig.png",               href: "/work/ig" },
+  { id: 6, baseX: -210, baseY:  -30, scrollSpeed: 195, mouseDepth: 0.7,  rot: -3,  w: 172, h: 130, img: "/homepage-header-themissingmetric.png",  href: "/work/missing-metric" },
+  { id: 7, baseX:  310, baseY: -200, scrollSpeed: 390, mouseDepth: 1.45, rot:  8,  w: 150, h: 112, img: "/homepage-header-sprout.png",            href: "/work/sprout" },
 ]
 
 function ParallaxCard({
@@ -38,7 +38,7 @@ function ParallaxCard({
   return (
     // Outer div: base position + per-card scroll speed
     <motion.div
-      className="absolute pointer-events-none"
+      className="absolute"
       style={{
         left: `calc(50% + ${card.baseX - card.w / 2}px)`,
         top:  `calc(50% + ${card.baseY - card.h / 2}px)`,
@@ -55,12 +55,16 @@ function ParallaxCard({
           y: mouseOffsetY,
           rotate: card.rot,
         }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.25 }}
       >
-        <img
-          src={card.img}
-          alt=""
-          className="w-full h-full object-cover rounded-2xl"
-        />
+        <a href={card.href} className="block w-full h-full">
+          <img
+            src={card.img}
+            alt=""
+            className="w-full h-full object-cover rounded-2xl cursor-pointer"
+          />
+        </a>
       </motion.div>
     </motion.div>
   )

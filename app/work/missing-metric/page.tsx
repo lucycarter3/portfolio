@@ -117,20 +117,25 @@ export default function MissingMetricPage() {
             </div>
           </motion.div>
 
-          {/* Next project nav */}
+          {/* Project nav */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mt-24 border-t border-border pt-12"
+            className="mt-24 border-t border-border pt-12 flex items-start justify-between"
           >
-            <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Next</span>
-            <a
-              href="/#work"
-              className="mt-3 flex items-center gap-3 text-3xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-4xl"
-            >
-              Wagestream <span style={{ color: "#0096FA" }}>→</span>
-            </a>
+            <div>
+              <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Previous</span>
+              <a href="/work/ig" className="mt-3 flex items-center gap-3 text-xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-2xl">
+                <span style={{ color: "#0096FA" }}>←</span> IG
+              </a>
+            </div>
+            <div className="text-right">
+              <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Next</span>
+              <a href="/work/wagestream" className="mt-3 flex items-center justify-end gap-3 text-xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-2xl">
+                Wagestream <span style={{ color: "#0096FA" }}>→</span>
+              </a>
+            </div>
           </motion.div>
 
         </div>

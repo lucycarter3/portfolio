@@ -111,20 +111,25 @@ export default function SafeFoodProPage() {
             </p>
           </motion.div>
 
-          {/* Next project nav */}
+          {/* Project nav */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-24 border-t border-border pt-12"
+            className="mt-24 border-t border-border pt-12 flex items-start justify-between"
           >
-            <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Next</span>
-            <a
-              href="/work/sprout"
-              className="mt-3 flex items-center gap-3 text-3xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-4xl"
-            >
-              Sprout <span style={{ color: "#0096FA" }}>→</span>
-            </a>
+            <div>
+              <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Previous</span>
+              <a href="/work/site-app-pro" className="mt-3 flex items-center gap-3 text-xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-2xl">
+                <span style={{ color: "#0096FA" }}>←</span> Site App Pro
+              </a>
+            </div>
+            <div className="text-right">
+              <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">Next</span>
+              <a href="/work/sprout" className="mt-3 flex items-center justify-end gap-3 text-xl font-medium tracking-tight hover:opacity-70 transition-opacity md:text-2xl">
+                Sprout <span style={{ color: "#0096FA" }}>→</span>
+              </a>
+            </div>
           </motion.div>
 
         </div>

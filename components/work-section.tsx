@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "motion/react"
-import { useRef } from "react"
+import { useRef, useState, useCallback } from "react"
 import { ProjectCard } from "./project-card"
 
 const projects = [
@@ -11,6 +11,7 @@ const projects = [
     role: "",
     year: "2026",
     image: "",
+    href: "/work/beat-the-street",
   },
   {
     title: "IG",
@@ -18,6 +19,7 @@ const projects = [
     role: "",
     year: "2025 / 2026",
     image: "",
+    href: "/work/ig",
   },
   {
     title: "The Missing Metric",
@@ -71,6 +73,22 @@ const projects = [
 
 export function WorkSection() {
   const scrollRef = useRef<HTMLDivElement>(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  const handleScroll = useCallback(() => {
+    const el = scrollRef.current
+    if (!el) return
+    const cardWidth = el.firstElementChild ? (el.firstElementChild as HTMLElement).offsetWidth + 24 : 1
+    const index = Math.round(el.scrollLeft / cardWidth)
+    setActiveIndex(Math.min(index, projects.length - 1))
+  }, [])
+
+  const scrollTo = (index: number) => {
+    const el = scrollRef.current
+    if (!el) return
+    const cardWidth = el.firstElementChild ? (el.firstElementChild as HTMLElement).offsetWidth + 24 : 0
+    el.scrollTo({ left: index * cardWidth, behavior: "smooth" })
+  }
 
   return (
     <section id="work" className="pt-24 pb-[5.4rem]">
@@ -99,20 +117,36 @@ export function WorkSection() {
       {/* Horizontal scroll container */}
       <div
         ref={scrollRef}
+        onScroll={handleScroll}
         className="scrollbar-hide flex gap-6 overflow-x-auto px-6 pb-4 md:px-12"
         style={{ scrollSnapType: "x mandatory" }}
       >
         {projects.map((project, index) => (
           <div
             key={project.title}
-            className="w-[85vw] shrink-0 md:w-[60vw] lg:w-[45vw]"
+            className="w-[92vw] shrink-0 md:w-[75vw] lg:w-[60vw]"
             style={{ scrollSnapAlign: "start" }}
           >
             <ProjectCard {...project} index={index} />
           </div>
         ))}
-        {/* Spacer for last card */}
         <div className="w-6 shrink-0 md:w-12" />
+      </div>
+
+      {/* Carousel indicator */}
+      <div className="mt-6 flex justify-center gap-2 px-6">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            aria-label={`Go to project ${index + 1}`}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              activeIndex === index
+                ? "w-8 bg-foreground"
+                : "w-1.5 bg-muted-foreground/30"
+            }`}
+          />
+        ))}
       </div>
     </section>
   )
