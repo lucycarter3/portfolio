@@ -43,29 +43,78 @@ export default function BeatTheStreetPage() {
             </h1>
           </motion.div>
 
-          {/* Intro copy */}
+          {/* Intro copy + Bull side by side */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-16 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground"
+            className="mt-16 flex flex-col gap-12 md:flex-row md:items-start"
           >
-            <p>
-              Beat the Street is a financial knowledge game developed for IG, one of the world's leading investment platforms. Designed to make investing more accessible and engaging, the game challenges players with a weekly quiz — offering £1,000 in Amazon vouchers to those who score full marks, with additional monthly prizes and a quarterly bonus pot of £10,000 up for grabs.
-            </p>
-            <p>
-              Rooted in IG's mission to build confidence in personal finance, Beat the Street transforms investing education into an interactive, rewarding experience — lowering the barrier to entry for a new generation of investors.
-            </p>
-            <p>
-              I headed up the visual direction for the project, including the use of AI-assisted illustration to bring the game's iconic bull character to life — blending emerging creative technology with considered art direction to define the visual identity of the game.
-            </p>
+            <div className="space-y-6 text-lg leading-relaxed text-muted-foreground md:w-2/3">
+              <p>
+                Beat the Street is a financial knowledge game developed for IG, one of the world's leading investment platforms. Designed to make investing more accessible and engaging, the game challenges players with a weekly quiz — offering £1,000 in Amazon vouchers to those who score full marks, with additional monthly prizes and a quarterly bonus pot of £10,000 up for grabs.
+              </p>
+              <p>
+                Rooted in IG's mission to build confidence in personal finance, Beat the Street transforms investing education into an interactive, rewarding experience — lowering the barrier to entry for a new generation of investors.
+              </p>
+              <p>
+                I headed up the visual direction for the project, including the use of AI-assisted illustration to bring the game's iconic bull character to life — blending emerging creative technology with considered art direction to define the visual identity of the game.
+              </p>
+            </div>
+            <div className="flex justify-center md:w-1/3">
+              <img
+                src="/bts-bull.png"
+                alt="Beat the Street bull character"
+                className="w-full"
+              />
+            </div>
+          </motion.div>
+
+          {/* Launch video */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-24"
+          >
+            <video
+              src="/bts-launch-video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-2xl"
+            />
+          </motion.div>
+
+          {/* Two column: social story + email */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mt-12 flex flex-col gap-6 md:flex-row md:items-start"
+          >
+            <div className="h-[480px] overflow-y-scroll rounded-2xl scrollbar-hide md:w-2/3">
+              <img
+                src="/bts-email.png"
+                alt="Beat the Street launch email"
+                className="w-full"
+              />
+            </div>
+            <div className="flex justify-center w-1/2 mx-auto md:mx-0 md:w-1/4">
+              <img
+                src="/bts-bull-social-story.png"
+                alt="Beat the Street bull social story"
+                className="w-full rounded-2xl"
+              />
+            </div>
           </motion.div>
 
           {/* Project nav */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-24 border-t border-border pt-12 flex items-start justify-between"
           >
             <div>

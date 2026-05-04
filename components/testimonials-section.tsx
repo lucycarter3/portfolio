@@ -1,6 +1,7 @@
 "use client"
 
-import { motion } from "motion/react"
+import { motion, AnimatePresence } from "motion/react"
+import { useState } from "react"
 
 const testimonials = [
   {
@@ -26,12 +27,58 @@ const testimonials = [
     title: "Head of Marketing",
     quote:
       "When you're working in a small team delivering high growth, you need people who just roll their sleeves up and get things done - Lucy most definitely did that! Never afraid to pitch in and have a go at something, Lucy made a big impact to the business in a short space of time. Whether it was managing the delivery of a complex website rebuild, working on the redesign itself or running daily WIPs with our offshore development team, I could count on Lucy to do what she said she would do. As a result, we were able to deliver not just entirely new websites, but a complete redesign and work stream of Conversion Rate Optimisation. Lucy is at her best when focused on a task with a clear outcome and this was nowhere more obvious than when the new site design and ongoing optimisation delivered more than 100% increase in conversion rates year-on-year which was genuinely transformative for our marketing and acquisition work!",
+    truncate: true,
   },
 ]
 
+function TestimonialCard({ testimonial, index }: { testimonial: typeof testimonials[0], index: number }) {
+  const [expanded, setExpanded] = useState(false)
+  const preview = testimonial.quote.slice(0, 800) + "…"
+
+  return (
+    <motion.div
+      key={testimonial.name}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="w-[85vw] shrink-0 md:w-[45vw] lg:w-[35vw]"
+      style={{ scrollSnapAlign: "start" }}
+    >
+      <div className="flex h-full flex-col rounded-2xl border border-border bg-background/60 p-8 backdrop-blur-sm">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="mb-6 text-muted-foreground/30">
+          <path d="M11 7.5H7.5C6.12 7.5 5 8.62 5 10v1.5c0 1.38 1.12 2.5 2.5 2.5H9c.83 0 1.5.67 1.5 1.5S9.83 18 9 18H8.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5H9c2.21 0 4-1.79 4-4v-6a2.5 2.5 0 00-2-2.5zM21 7.5h-3.5C16.12 7.5 15 8.62 15 10v1.5c0 1.38 1.12 2.5 2.5 2.5H19c.83 0 1.5.67 1.5 1.5S19.83 18 19 18h-.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h.5c2.21 0 4-1.79 4-4v-6a2.5 2.5 0 00-2-2.5z" fill="currentColor" />
+        </svg>
+        <div className="flex-1">
+          <AnimatePresence initial={false}>
+            <motion.p
+              className="whitespace-pre-line text-base leading-relaxed text-muted-foreground"
+              animate={{ height: "auto" }}
+            >
+              {testimonial.truncate && !expanded ? preview : testimonial.quote}
+            </motion.p>
+          </AnimatePresence>
+          {testimonial.truncate && (
+            <button
+              onClick={() => setExpanded(!expanded)}
+              className="mt-3 text-sm font-medium text-foreground underline-offset-4 hover:underline transition-colors"
+            >
+              {expanded ? "Read less ↑" : "Read more ↓"}
+            </button>
+          )}
+        </div>
+        <div className="mt-8 border-t border-border pt-6">
+          <p className="font-medium">{testimonial.name}</p>
+          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 export function TestimonialsSection() {
   return (
-    <section className="py-24">
+    <section className="pt-8 pb-24">
       <div className="mx-auto max-w-7xl px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -60,39 +107,7 @@ export function TestimonialsSection() {
         style={{ scrollSnapType: "x mandatory" }}
       >
         {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.name}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="w-[85vw] shrink-0 md:w-[45vw] lg:w-[35vw]"
-            style={{ scrollSnapAlign: "start" }}
-          >
-            <div className="flex h-full flex-col rounded-2xl border border-border bg-background/60 p-8 backdrop-blur-sm">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                fill="none"
-                className="mb-6 text-muted-foreground/30"
-              >
-                <path
-                  d="M11 7.5H7.5C6.12 7.5 5 8.62 5 10v1.5c0 1.38 1.12 2.5 2.5 2.5H9c.83 0 1.5.67 1.5 1.5S9.83 18 9 18H8.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5H9c2.21 0 4-1.79 4-4v-6a2.5 2.5 0 00-2-2.5zM21 7.5h-3.5C16.12 7.5 15 8.62 15 10v1.5c0 1.38 1.12 2.5 2.5 2.5H19c.83 0 1.5.67 1.5 1.5S19.83 18 19 18h-.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h.5c2.21 0 4-1.79 4-4v-6a2.5 2.5 0 00-2-2.5z"
-                  fill="currentColor"
-                />
-              </svg>
-              <p className="flex-1 whitespace-pre-line text-base leading-relaxed text-muted-foreground">
-                {testimonial.quote}
-              </p>
-              <div className="mt-8 border-t border-border pt-6">
-                <p className="font-medium">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.title}
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          <TestimonialCard key={testimonial.name} testimonial={testimonial} index={index} />
         ))}
         {/* Spacer for last card */}
         <div className="w-6 shrink-0 md:w-12" />

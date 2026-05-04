@@ -10,7 +10,7 @@ const projects = [
     description: "",
     role: "",
     year: "2026",
-    image: "",
+    image: "/bts-tile.png",
     href: "/work/beat-the-street",
   },
   {

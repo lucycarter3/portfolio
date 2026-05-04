@@ -87,6 +87,13 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
+            <div className="mb-10 flex justify-end">
+              <img
+                src="/lucy-headshot.jpg"
+                alt="Lucy Carter"
+                className="h-48 w-48 rounded-full object-cover"
+              />
+            </div>
             <h3 className="mb-8 text-sm font-medium text-muted-foreground">
               Experience
             </h3>
