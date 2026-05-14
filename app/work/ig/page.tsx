@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "motion/react"
 import { useRef, useState, forwardRef, useEffect } from "react"
+// useRef kept for MuteableVideo internals
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
@@ -45,54 +46,74 @@ const MuteableVideo = forwardRef<HTMLVideoElement, { src: string; className?: st
   function MuteableVideo({ src, className }, ref) {
   const innerRef = useRef<HTMLVideoElement>(null)
   const videoRef = (ref as React.RefObject<HTMLVideoElement>) ?? innerRef
+  const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(true)
-  const toggle = () => {
+
+  const togglePlay = () => {
+    if (!videoRef.current) return
+    if (videoRef.current.paused) {
+      videoRef.current.play()
+      setPlaying(true)
+    } else {
+      videoRef.current.pause()
+      setPlaying(false)
+    }
+  }
+
+  const toggleMute = () => {
     if (!videoRef.current) return
     videoRef.current.muted = !videoRef.current.muted
     setMuted(videoRef.current.muted)
   }
+
   return (
     <div className={`relative ${className ?? ""}`}>
       <video ref={videoRef} src={src} muted loop playsInline className="w-full rounded-2xl" />
-      <button
-        onClick={toggle}
-        className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-black/70"
-      >
-        {muted ? (
-          <><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z" /></svg> Unmute</>
-        ) : (
-          <><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06ZM15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" /></svg> Mute</>
-        )}
-      </button>
+
+      {/* Play button overlay — shown when paused */}
+      {!playing && (
+        <button
+          onClick={togglePlay}
+          className="absolute inset-0 flex items-center justify-center rounded-2xl bg-black/30 backdrop-blur-[2px] transition hover:bg-black/40"
+        >
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 translate-x-0.5 text-black">
+              <path d="M8 5.14v14l11-7-11-7z" />
+            </svg>
+          </div>
+        </button>
+      )}
+
+      {/* Controls — shown when playing */}
+      {playing && (
+        <div className="absolute bottom-3 right-3 flex gap-2">
+          <button
+            onClick={togglePlay}
+            className="flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-black/70"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+            Pause
+          </button>
+          <button
+            onClick={toggleMute}
+            className="flex items-center gap-1.5 rounded-full bg-black/50 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition hover:bg-black/70"
+          >
+            {muted ? (
+              <><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM17.78 9.22a.75.75 0 1 0-1.06 1.06L18.44 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 1 0 1.06-1.06L20.56 12l1.72-1.72a.75.75 0 1 0-1.06-1.06l-1.72 1.72-1.72-1.72Z" /></svg> Unmute</>
+            ) : (
+              <><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M13.5 4.06c0-1.336-1.616-2.005-2.56-1.06l-4.5 4.5H4.508c-1.141 0-2.318.664-2.66 1.905A9.76 9.76 0 0 0 1.5 12c0 .898.121 1.768.35 2.595.341 1.24 1.518 1.905 2.659 1.905h1.93l4.5 4.5c.945.945 2.561.276 2.561-1.06V4.06ZM18.584 5.106a.75.75 0 0 1 1.06 0c3.808 3.807 3.808 9.98 0 13.788a.75.75 0 0 1-1.06-1.06 8.25 8.25 0 0 0 0-11.668.75.75 0 0 1 0-1.06ZM15.932 7.757a.75.75 0 0 1 1.061 0 6 6 0 0 1 0 8.486.75.75 0 0 1-1.06-1.061 4.5 4.5 0 0 0 0-6.364.75.75 0 0 1 0-1.06Z" /></svg> Mute</>
+            )}
+          </button>
+        </div>
+      )}
     </div>
   )
 })
 
 export default function IGPage() {
-  const vid1 = useRef<HTMLVideoElement>(null)
-  const vid2 = useRef<HTMLVideoElement>(null)
   const [modal, setModal] = useState<{ src: string; alt: string } | null>(null)
-
-  useEffect(() => {
-    const v1 = vid1.current
-    const v2 = vid2.current
-    if (!v1 || !v2) return
-    const onReady = () => {
-      if (v1.readyState >= 3 && v2.readyState >= 3) {
-        v1.currentTime = 0
-        v2.currentTime = 0
-        v1.play()
-        v2.play()
-      }
-    }
-    v1.addEventListener("canplay", onReady)
-    v2.addEventListener("canplay", onReady)
-    onReady()
-    return () => {
-      v1.removeEventListener("canplay", onReady)
-      v2.removeEventListener("canplay", onReady)
-    }
-  }, [])
 
   return (
     <div className="relative">
@@ -224,8 +245,8 @@ export default function IGPage() {
               These acquisition ads introduced IG's secondary colour palette, expanding the campaign toolkit while staying firmly within the brand system. Each execution was tested against phone UI to ensure legibility and impact in-feed. A key part of the process was bringing AI-generated illustration into the creative workflow – using Nano Banana to produce imagery that matched the style and tone of our existing illustration library, then animating those assets with Google Veo.
             </p>
             <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-start">
-              <MuteableVideo ref={vid1} src="/ig-incentive-cashback.mp4" className="w-full md:w-1/2" />
-              <MuteableVideo ref={vid2} src="/ig-incentive-bonus-shares.mp4" className="w-full md:w-1/2" />
+              <MuteableVideo src="/ig-incentive-cashback.mp4" className="w-full md:w-1/2" />
+              <MuteableVideo src="/ig-incentive-bonus-shares.mp4" className="w-full md:w-1/2" />
             </div>
           </motion.div>
 
