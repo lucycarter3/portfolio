@@ -6,9 +6,9 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
 const images = [
-  { src: "/Safefoodpro_1.png", alt: "Safe Food Pro — screen 1" },
-  { src: "/Safefoodpro_2.png", alt: "Safe Food Pro — screen 2" },
-  { src: "/Safefoodpro_3.png", alt: "Safe Food Pro — screen 3" },
+  { src: "/Safefoodpro_1.png", alt: "Safe Food Pro – screen 1" },
+  { src: "/Safefoodpro_2.png", alt: "Safe Food Pro – screen 2" },
+  { src: "/Safefoodpro_3.png", alt: "Safe Food Pro – screen 3" },
 ]
 
 export default function SafeFoodProPage() {
@@ -52,7 +52,7 @@ export default function SafeFoodProPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6"
           >
-            <span className="text-sm font-medium text-muted-foreground">2021 — 2023</span>
+            <span className="text-sm font-medium text-muted-foreground">2021 – 2023</span>
             <h1 className="mt-3 text-5xl font-medium tracking-tight md:text-7xl">
               Safe Food Pro<span style={{ color: "#0096FA" }}>.</span>
             </h1>
@@ -104,10 +104,10 @@ export default function SafeFoodProPage() {
               Safe Food Pro is a food safety platform empowering businesses to manage their compliance programmes with simplicity and confidence.
             </p>
             <p>
-              This project centred on a comprehensive website redesign — encompassing both a content overhaul and a refined brand update. A key focus was placed on optimising conversion through increasing the number, strategic placement, and styling of calls to action throughout the site.
+              This project centred on a comprehensive website redesign – encompassing both a content overhaul and a refined brand update. A key focus was placed on optimising conversion through increasing the number, strategic placement, and styling of calls to action throughout the site.
             </p>
             <p>
-              New content frameworks were developed around two core prospect questions — who is it for and what do you need — enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
+              New content frameworks were developed around two core prospect questions – who is it for and what do you need – enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
             </p>
           </motion.div>
 

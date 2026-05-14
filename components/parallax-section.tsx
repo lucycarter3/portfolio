@@ -4,8 +4,8 @@ import { useRef, useCallback } from "react"
 import { motion, useMotionValue, useSpring, useTransform, useScroll, MotionValue } from "motion/react"
 
 // baseX/Y: offset from centre (px)
-// scrollSpeed: how far the card travels upward over the full scroll (px) — higher = faster
-// mouseDepth: how strongly the card reacts to mouse movement — higher = more
+// scrollSpeed: how far the card travels upward over the full scroll (px) – higher = faster
+// mouseDepth: how strongly the card reacts to mouse movement – higher = more
 // rot: static tilt angle (no mouse-driven rotation)
 const CARDS = [
   { id: 1, baseX: -375, baseY: -170, scrollSpeed: 160, mouseDepth: 0.35, rot: -5,  w: 185, h: 135, img: "/homepage-header-bts.png",              href: "/work/beat-the-street" },
@@ -125,7 +125,7 @@ export function ParallaxSection() {
           />
         ))}
 
-        {/* Centre headshot — anchored to bottom */}
+        {/* Centre headshot – anchored to bottom */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 h-[449px] w-[449px] overflow-hidden">
           <img
             src="/Lucy-headshot-header.png"

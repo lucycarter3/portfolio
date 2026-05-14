@@ -37,7 +37,7 @@ export default function SiteAppProPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6"
           >
-            <span className="text-sm font-medium text-muted-foreground">2021 — 2023</span>
+            <span className="text-sm font-medium text-muted-foreground">2021 – 2023</span>
             <h1 className="mt-3 text-5xl font-medium tracking-tight md:text-7xl">
               Site App Pro<span style={{ color: "#0096FA" }}>.</span>
             </h1>
@@ -64,10 +64,10 @@ export default function SiteAppProPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3"
           >
-            {/* Body copy — takes up 2 cols */}
+            {/* Body copy – takes up 2 cols */}
             <div className="space-y-6 text-lg leading-relaxed text-muted-foreground md:col-span-2">
               <p>
-                As part of a wider website redesign, a key focus was placed on optimising conversion through the strategic placement and styling of calls to action. New content frameworks were developed around two core prospect questions — who is it for and what do you need — enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
+                As part of a wider website redesign, a key focus was placed on optimising conversion through the strategic placement and styling of calls to action. New content frameworks were developed around two core prospect questions – who is it for and what do you need – enabling visitors to quickly identify solutions relevant to their business size or specific challenge. The project was completed with the introduction of a search capability, allowing prospects to surface relevant resources and product features with greater ease.
               </p>
             </div>
 

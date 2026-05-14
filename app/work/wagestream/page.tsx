@@ -37,7 +37,7 @@ export default function WagestreamPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6"
           >
-            <span className="text-sm font-medium text-muted-foreground">2024 — 2025</span>
+            <span className="text-sm font-medium text-muted-foreground">2024 – 2025</span>
             <h1 className="mt-3 text-5xl font-medium tracking-tight md:text-7xl">
               Wagestream<span style={{ color: "#0096FA" }}>.</span>
             </h1>
@@ -51,10 +51,10 @@ export default function WagestreamPage() {
             className="mt-16 max-w-3xl space-y-6 text-lg leading-relaxed text-muted-foreground"
           >
             <p>
-              Wagestream is a financial wellbeing platform committed to bringing fair, accessible financial services to frontline workers worldwide — giving employees greater autonomy over their earnings and, in turn, their lives.
+              Wagestream is a financial wellbeing platform committed to bringing fair, accessible financial services to frontline workers worldwide – giving employees greater autonomy over their earnings and, in turn, their lives.
             </p>
             <p>
-              Trusted by employers across the globe, the platform enables workers to access a portion of their earned wages in real time, alongside an integrated suite of tools spanning budgeting, saving, and financial education. By reimagining the traditional pay cycle, Wagestream addresses financial stress at its root — fostering healthier financial habits and cultivating a more motivated, engaged, and resilient workforce.
+              Trusted by employers across the globe, the platform enables workers to access a portion of their earned wages in real time, alongside an integrated suite of tools spanning budgeting, saving, and financial education. By reimagining the traditional pay cycle, Wagestream addresses financial stress at its root – fostering healthier financial habits and cultivating a more motivated, engaged, and resilient workforce.
             </p>
           </motion.div>
 

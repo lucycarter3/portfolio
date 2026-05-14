@@ -17,7 +17,7 @@ export default function Home() {
 
       <Header />
       <main>
-        {/* Black parallax — stays sticky while card slides over */}
+        {/* Black parallax – stays sticky while card slides over */}
         <div className="sticky top-0 z-0">
           <ParallaxSection />
         </div>
