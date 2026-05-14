@@ -99,7 +99,7 @@ export function Header() {
               LinkedIn
             </motion.a>
 
-            {/* Hamburger button — mobile only */}
+            {/* Hamburger button – mobile only */}
             <button
               className="flex flex-col items-center justify-center gap-1.5 md:hidden"
               onClick={() => setMenuOpen((v) => !v)}

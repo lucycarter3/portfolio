@@ -68,7 +68,7 @@ export default function FreshaPage() {
               Window Stickers<span style={{ color: "#0096FA" }}>.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              A brand awareness initiative built around an annual awards programme recognising excellence across two tiers: Highly Recommended and Best in Class. Each recognition is accompanied by a curated suite of printed collateral — an embossed certificate, a congratulatory letter, a window sticker, and a QR code booking sticker — crafted to celebrate recipients while extending brand visibility in the real world.
+              A brand awareness initiative built around an annual awards programme recognising excellence across two tiers: Highly Recommended and Best in Class. Each recognition is accompanied by a curated suite of printed collateral – an embossed certificate, a congratulatory letter, a window sticker, and a QR code booking sticker – crafted to celebrate recipients while extending brand visibility in the real world.
             </p>
             <div className="mt-8 flex flex-col gap-4">
               <div className="overflow-hidden rounded-2xl">
@@ -98,9 +98,9 @@ export default function FreshaPage() {
                 App Store Screenshots<span style={{ color: "#0096FA" }}>.</span>
               </h2>
               <div className="mt-4 space-y-4 text-lg leading-relaxed text-muted-foreground">
-                <p>Brand awareness and product marketing project delivering updated App Store screenshots for the Fresha B2B platform — the world's leading online marketplace and booking solution for beauty, hair, and wellness professionals.</p>
-                <p>With over 450,000 businesses across 120+ countries trusting Fresha to run their operations, the updated screenshots were crafted to communicate the platform's breadth and capability at a glance. Each screen was designed to highlight the tools that matter most to modern salon and wellness owners — from appointment scheduling and point-of-sale to staff management and targeted marketing.</p>
-                <p>This refresh introduced a suite of new feature callouts, including an upgraded scheduling view, revitalised visual design, and the integration of verified Capterra reviews — lending third-party credibility to reinforce Fresha's position as the industry's most trusted platform.</p>
+                <p>Brand awareness and product marketing project delivering updated App Store screenshots for the Fresha B2B platform – the world's leading online marketplace and booking solution for beauty, hair, and wellness professionals.</p>
+                <p>With over 450,000 businesses across 120+ countries trusting Fresha to run their operations, the updated screenshots were crafted to communicate the platform's breadth and capability at a glance. Each screen was designed to highlight the tools that matter most to modern salon and wellness owners – from appointment scheduling and point-of-sale to staff management and targeted marketing.</p>
+                <p>This refresh introduced a suite of new feature callouts, including an upgraded scheduling view, revitalised visual design, and the integration of verified Capterra reviews – lending third-party credibility to reinforce Fresha's position as the industry's most trusted platform.</p>
               </div>
             </div>
 
@@ -180,7 +180,7 @@ export default function FreshaPage() {
               Christmas Holiday Cards<span style={{ color: "#0096FA" }}>.</span>
             </h2>
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-              A seasonal extension of the Fresha brand identity, developed by pushing existing brand shapes and colour palette to craft a bespoke illustration style — bringing warmth and festivity to the platform while maintaining visual cohesion with the wider brand.
+              A seasonal extension of the Fresha brand identity, developed by pushing existing brand shapes and colour palette to craft a bespoke illustration style – bringing warmth and festivity to the platform while maintaining visual cohesion with the wider brand.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
               {[1,2,3,4].map((n) => (

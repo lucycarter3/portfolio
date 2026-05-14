@@ -10,7 +10,7 @@ const projects = [
     description: "",
     role: "",
     year: "2026",
-    image: "/bts-tile.png",
+    image: "/bts-tile.webp",
     href: "/work/beat-the-street",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
     description: "",
     role: "",
     year: "2025 / 2026",
-    image: "",
+    image: "/ig-work-card.webp",
     href: "/work/ig",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     description: "",
     role: "",
     year: "2024 / 2025",
-    image: "/wagestream.jpg",
+    image: "/wagestream.webp",
     href: "/work/wagestream",
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     description: "",
     role: "",
     year: "2021 / 2023",
-    image: "/siteapppro_tile.png",
+    image: "/siteapppro_tile.webp",
     href: "/work/site-app-pro",
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     description: "",
     role: "",
     year: "2021 / 2023",
-    image: "/safefoodpro_tile.jpg",
+    image: "/safefoodpro_tile.webp",
     href: "/work/safe-food-pro",
   },
   {
@@ -66,7 +66,7 @@ const projects = [
     description: "",
     role: "",
     year: "2020",
-    image: "/sprout3.jpg",
+    image: "/sprout3.webp",
     href: "/work/sprout",
   },
 ]

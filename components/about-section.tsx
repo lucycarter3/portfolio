@@ -6,20 +6,20 @@ const skills = [
   "Marketing Design",
   "Branding",
   "Web Design",
-  "Design Systems",
   "Artworking",
+  "Creative Ideation",
 ]
 
 const experience = [
   {
     company: "IG",
     role: "Designer",
-    period: "2025 — Present",
+    period: "2025 – Present",
   },
   {
     company: "Wagestream",
     role: "Digital Content Designer",
-    period: "2024 — 2025",
+    period: "2024 – 2025",
   },
   {
     company: "Fresha",
@@ -29,7 +29,7 @@ const experience = [
   {
     company: "Comply Pro",
     role: "Performance Designer\nDigital Designer",
-    period: "2021 — 2023",
+    period: "2021 – 2023",
   },
 ]
 
@@ -57,7 +57,7 @@ export function AboutSection() {
             </div>
 
             <p className="mt-8 text-base leading-relaxed text-muted-foreground md:text-lg">
-              Hi, I'm Lucy — a New Zealand-born, London-based Digital Content Designer with over six years of experience crafting purposeful, accessible, and considered digital experiences. Shaped by a breadth of work across the Software as a Service and Fintech landscapes, my practice sits at the intersection of design craft and strategic thinking — creating work that is as functional as it is visually refined.
+              Hi, I'm Lucy – a New Zealand-born, London-based Digital Content Designer with over six years of experience crafting purposeful, accessible, and considered digital experiences. Shaped by a breadth of work across the Software as a Service and Fintech landscapes, my practice sits at the intersection of design craft and strategic thinking – creating work that is as functional as it is visually refined.
             </p>
 
             <div className="mt-12">
