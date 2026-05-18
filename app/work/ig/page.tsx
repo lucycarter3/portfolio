@@ -269,13 +269,6 @@ export default function IGPage() {
                   className="w-full"
                 />
               </div>
-              <div className="h-[600px] overflow-y-scroll rounded-2xl scrollbar-hide md:w-1/2">
-                <img
-                  src="/ig-crm-pre-launch.gif"
-                  alt="IG CRM email – Pre Launch"
-                  className="w-full"
-                />
-              </div>
             </div>
           </motion.div>
 
